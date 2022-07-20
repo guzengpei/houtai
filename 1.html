@@ -1,0 +1,49 @@
+<template v-slot="scope">
+    <div class="tag">
+      <el-row
+        type="flex"
+        align="middle"
+        v-for="item1 in scope.row.children"
+        :key="item1.id"
+        class="border_bottom border_top"
+      >
+        <!-- 一级数据 -->
+        <el-col :span="5">
+          <div class="bg-purple">
+            <el-tag>{{ item1.authName }}</el-tag>
+          </div>
+        </el-col>
+        <!-- 二级数据 -->
+        <el-col :span="19">
+          <div>
+            <el-row>
+              <el-col
+                :span="24"
+                v-for="item2 in item1.children"
+                :key="item2.id"
+                ><div class="border_top">
+                  <el-row type="flex" justify="middle">
+                    <el-col :span="4">
+                      <el-tag type="success">{{
+                        item2.authName
+                      }}</el-tag>
+                    </el-col>
+                    <el-col :span="20">
+                      <!-- 三级数据 -->
+                      <div class="grid-content bg-purple">
+                        <el-row>
+                          <el-col :span="24">
+                            <div class="grid-content bg-purple">
+                              <el-tag
+                                v-for="tag in item2.children"
+                                :key="tag.id"
+                                closable
+                                :type="''"
+                              >
+                                {{ tag.authName }}
+                              </el-tag>
+                            </div>
+                          </el-col>
+      <template v-slot="scope">
+    <div class="tag">
+      <el-r
